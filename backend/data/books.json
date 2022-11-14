@@ -1,0 +1,74 @@
+{
+  "result": [
+    {
+      "title": "Frankenstein; Or, The Modern Prometheus",
+      "author": "Mary Wollstonecraft Shelley",
+      "genre": "Science Fiction",
+      "metadata": {
+        "lang": "English",
+        "source": "https://www.gutenberg.org/ebooks/84"
+      },
+      "passages": [
+        {
+          "chapter": 29,
+          "text": "His limbs were in proportion, and I had selected his features as beautiful. Beautiful! Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun-white sockets in which they were set, his shrivelled complexion and straight black lips."
+        },
+        {
+          "chapter": 0,
+          "text": "I am already far north of London, and as I walk in the streets of Petersburgh, I feel a cold northern breeze play upon my cheeks, which braces my nerves and fills me with delight. Do you understand this feeling? This breeze, which has travelled from the regions towards which I am advancing, gives me a foretaste of those icy climes. Inspirited by this wind of promise, my daydreams become more fervent and vivid. I try in vain to be persuaded that the pole is the seat of frost and desolation; it ever presents itself to my imagination as the region of beauty and delight."
+        },
+        {
+          "chapter": 23,
+          "text": "She had been moved from the posture in which I had first beheld her, and now, as she lay, her head upon her arm and a handkerchief thrown across her face and neck, I might have supposed her asleep. I rushed towards her and embraced her with ardour, but the deadly languor and coldness of the limbs told me that what I now held in my arms had ceased to be the Elizabeth whom I had loved and cherished."
+        }
+
+      ]
+    },
+    {
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "genre": "Fantasy Fiction ",
+      "metadata": {
+        "lang": "English",
+        "source": "https://www.gutenberg.org/ebooks/11"
+      },
+      "passages": [
+        {
+          "chapter": 4,
+          "text": "It did so indeed, and much sooner than she had expected: before she had drunk half the bottle, she found her head pressing against the ceiling, and had to stoop to save her neck from being broken."
+        },
+        {
+          "chapter": 1,
+          "text": "There was nothing so very remarkable in that; nor did Alice think it so very much out of the way to hear the Rabbit say to itself, “Oh dear! Oh dear! I shall be late!”"
+        },
+        {
+          "chapter": 5,
+          "text": "The Caterpillar and Alice looked at each other for some time in silence: at last the Caterpillar took the hookah out of its mouth, and addressed her in a languid, sleepy voice."
+        }
+      ]
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Fiction",
+      "metadata": {
+        "lang": "English",
+        "source": "https://www.gutenberg.org/ebooks/1342"
+      },
+      "passages": [
+        {
+          "chapter": 2,
+          "text": "Then he took out my traps, and placed them on the ground beside me as I stood close to a great door, old and studded with large iron nails, and set in a projecting doorway of massive stone. I could see even in the dim light that the stone was massively carved, but that the carving had been much worn by time and weather."
+        },
+        {
+          "chapter": 2,
+          "text": "Within, stood a tall old man, clean shaven save for a long white moustache, and clad in black from head to foot, without a single speck of colour about him anywhere."
+        },
+        {
+          "chapter": 15,
+          "text": "The logic is simple, no madman’s logic this time, jumping from tussock to tussock in a misty bog."
+        }
+      ]
+    }
+  ]
+}
