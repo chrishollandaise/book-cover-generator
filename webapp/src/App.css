@@ -49,3 +49,8 @@ hr {
   margin: 2em 0;
   opacity: 0.5;
 }
+
+.plate {
+  display: block;
+  margin: 1em auto;
+}

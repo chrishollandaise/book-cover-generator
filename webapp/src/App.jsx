@@ -17,14 +17,14 @@ function Book(props) {
   return <div className="book">
     <h2>{book.title}</h2>
     <p>{book.author}</p>
-    <img style={{"display": !isLoaded ? "None" : "Block"}} src={plate} alt="Book illustration" />
+    <img className="plate" style={{"display": !isLoaded ? "None" : "Block"}} src={plate} alt="Book illustration" />
 
     <form>
       <fieldset className="passage-fieldset">
         <legend className='accent'><strong>Select a passage.</strong></legend>
         {book.passages.map(passage => {
             return(
-            <div className="passage-selection">
+            <div key={`${passage.text}`} className="passage-selection">
               <input type='radio' id={`${passage.chapter}-${passage.text[0]}`} name="passage" onChange={(e) => {onChange(e, setPassage)}} value={passage.text} required/>
               <label htmlFor={`${passage.chapter}-${passage.text[0]}`}>{passage.text}</label>
             </div>
@@ -34,14 +34,17 @@ function Book(props) {
       <div>
         <label htmlFor="style">Select a style: </label>
         <select name="style" id="style" onChange={(e) => {onChange(e, setStyle)}} required>
+          <option value="">--</option>
           {styles.map(style => {
-            return <option value={style}>{style}</option>
+            return <option key={style[0]} value={style}>{style}</option>
           })}
         </select>
       <button type="submit" onClick={(e) => {
         e.preventDefault();
-        console.log(passage);
-        fetch('http://localhost:8000/imagine', {
+        
+        if (style && passage) {
+          setIsLoaded(false);
+          fetch('http://localhost:8000/imagine', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -51,8 +54,14 @@ function Book(props) {
             "style": style
           }),
         })
-        .then(response => console.log(response.status))
-        
+        .then(response => response.json())
+        .then(data => {
+          const id = data['id'];
+          fetch(`http://localhost:8000/plates/${id}`)
+          .then(res => setPlate(res.url))
+          setIsLoaded(true);
+        })
+      }
       }}>
         Generate
       </button>
@@ -108,8 +117,8 @@ function App() {
       <ul>
         {books.map(book => {
           return (
-            <div>
-              <Book key={book.title} book={book} styles={styles}/>
+            <div key={book.author}>
+              <Book book={book} styles={styles}/>
               <hr />
             </div> 
           )
