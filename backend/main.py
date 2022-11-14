@@ -1,7 +1,8 @@
 # FAST API imports
 from fastapi import FastAPI, Response
 from fastapi.responses import FileResponse
-from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
 
 # STABLE DIFFUSION imports
 import torch
@@ -36,16 +37,18 @@ DATA_PATH.mkdir(parents=True, exist_ok=True)
 PLATES_PATH = Path.joinpath(DATA_PATH, 'plates')
 PLATES_PATH.mkdir(parents=True, exist_ok=True)
 
-# Fast API
-app = FastAPI()
+middleware = [
+    Middleware(
+        CORSMiddleware,
+        allow_origins=['*'],
+        allow_credentials=True,
+        allow_methods=['*'],
+        allow_headers=['*']
+    )
+]
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_credentials=True, 
-    allow_origins=["*"], 
-    allow_methods=["*"], 
-    allow_headers=["*"]
-)
+# Fast API
+app = FastAPI(middleware=middleware)
 
 # -- END SET UP STAGE --
 
@@ -110,4 +113,6 @@ def create_plate(comm : Commission):
   URI = Path.joinpath(PLATES_PATH, f'{image_hash}.png')
   image.save(URI)
 
-  return Response(status_code=201, headers={"location": f'\{URI}'})
+  # TODO: return proper response for a 201, this is a temporary fix
+  return {"id": image_hash}
+  # return Response(content={"result": f'{image_hash}'}, status_code=201, headers={"location": f'\{URI}'})
