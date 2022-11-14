@@ -14,5 +14,8 @@ services:
               - gpu
               - utility # nvidia-smi
               - compute # CUDA. Required to avoid "CUDA version: N/A"
-
-    
+  webapp:
+    build: ./webapp
+    ports:
+      - "8080:8080"
+    command: npm run dev
