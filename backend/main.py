@@ -55,7 +55,7 @@ def read_books():
   """
   Fetches a list of supported books
   """
-  BOOKS_PATH = Path.joinpath(DATA_PATH, 'books')
+  BOOKS_PATH = Path.joinpath(DATA_PATH, 'books.json')
 
   if not BOOKS_PATH.exists(): 
     print("WARNING: No books found")
