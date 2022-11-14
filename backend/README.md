@@ -3,7 +3,7 @@ This is the backend for the project. Currently, it is just a RESTful API written
 
 ## Preqrequisites
 > **ATTENTION: If you do not have a CUDA enabled device, some functionality of the backend will be lossed (e.g. image generation)**
-1. [Install Python >=3.10.0](https://www.python.org/downloads/)
+1. [Install Python >=3.9.0](https://www.python.org/downloads/)
 2. [Install CUDA == 11.6](https://developer.nvidia.com/cuda-downloads)
 3. Replace AUTH_TOKEN variable in `backend/auth_token.py` with your Hugging Face user access token with read scope access. [See here](https://huggingface.co/docs/hub/security-tokens) for more information.
 
