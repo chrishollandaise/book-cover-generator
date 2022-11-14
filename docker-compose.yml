@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    command: uvicorn main:app --host 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities:
+              - gpu
+              - utility # nvidia-smi
+              - compute # CUDA. Required to avoid "CUDA version: N/A"
+
+    
