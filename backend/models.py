@@ -17,6 +17,7 @@ class Passage(BaseModel):
 class Meta(BaseModel):
     lang: str
     source: str
+    cover: str
 
 class Book(BaseModel):
     title: str

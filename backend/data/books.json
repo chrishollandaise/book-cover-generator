@@ -6,7 +6,8 @@
       "genre": "Science Fiction",
       "metadata": {
         "lang": "English",
-        "source": "https://www.gutenberg.org/ebooks/84"
+        "source": "https://www.gutenberg.org/ebooks/84",
+        "cover": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg"
       },
       "passages": [
         {
@@ -30,7 +31,8 @@
       "genre": "Fantasy Fiction ",
       "metadata": {
         "lang": "English",
-        "source": "https://www.gutenberg.org/ebooks/11"
+        "source": "https://www.gutenberg.org/ebooks/11",
+        "cover": "https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg"
       },
       "passages": [
         {
@@ -48,12 +50,13 @@
       ]
     },
     {
-      "title": "Pride and Prejudice",
+      "title": "Dracula",
       "author": "Jane Austen",
-      "genre": "Fiction",
+      "genre": "Literature",
       "metadata": {
         "lang": "English",
-        "source": "https://www.gutenberg.org/ebooks/1342"
+        "source": "https://www.gutenberg.org/ebooks/345",
+        "cover": "https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg"
       },
       "passages": [
         {
