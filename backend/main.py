@@ -14,15 +14,14 @@ from io import BytesIO
 from models import Styles, Commission
 import json
 from pathlib import Path
-from auth_token import AUTH_TOKEN
-
+import os 
 # -- SET UP STAGE --
 
 # Stable Diffusion
 if torch.cuda.is_available():
   DEVICE = 'cuda'
   try:
-    pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, revision="fp16", use_auth_token=AUTH_TOKEN)
+    pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, revision="fp16", use_auth_token=os.environ['AUTH_TOKEN'])
     pipe = pipe.to(DEVICE)
     pipe.safety_checker = lambda images, clip_input: (images, False)
   except Exception as e:
@@ -89,8 +88,8 @@ def generate_plate(passage: str, style: Styles):
   """
   Generates a plate from a passage and style using Stable Diffusion
   """
-  with torch.autocast(DEVICE):
-      return pipe(f"{passage} depicted in the style of ${style}", guidance_scale=8.5).images[0]
+  
+  return pipe(f"{passage} depicted in the style of ${style}", guidance_scale=8.5).images[0]
 
 @app.post('/imagine', status_code=201)
 def create_plate(comm : Commission):
